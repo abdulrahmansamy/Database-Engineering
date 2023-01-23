@@ -2,9 +2,11 @@
 
 ## MySQL DBA
 
+
 ### MySQL Database Administration: Beginner SQL Database Design
 
 https://www.udemy.com/course/mysql-dba-for-beginners/
+
 
 
 ### Advanced SQL Database Administration with MySQL Workbench
