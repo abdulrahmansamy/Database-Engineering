@@ -3,12 +3,15 @@ USE sloppyjoes;
 SELECT * FROM staff;
 SELECT * FROM customer_orders;
 
-CREATE TRIGGER updateorderserved
+DROP TRIGGER updateOrdersServed;
+
+CREATE TRIGGER updateOrdersServed
 AFTER INSERT ON customer_orders
 FOR EACH ROW 
 	UPDATE staff
-		SET orders_served = orders_serverd + 1
-	WHERE staff_id = NEW.staff_id;
+		SET orders_served = orders_served + 1
+	WHERE staff_id = NEW.staff_id
+;
     
 INSERT INTO customer_orders
 VALUES
