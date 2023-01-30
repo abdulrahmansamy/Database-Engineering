@@ -1,13 +1,29 @@
 USE onlinelearningschool;
 
-SELECT * FROM courses;
+SELECT * FROM courses
+;
 
-SELECT * FROM course_ratings;
+SELECT * FROM course_ratings
+;
 
-SELECT * FROM course_ratings_summaries;
+SELECT * FROM course_ratings_summaries
+;
+
+
+SELECT DISTINCT
+	course_id,
+	course_name,
+    instructor
+FROM course_ratings
+;
 
 CREATE TABLE course_ratings_normalized
-SELECT rating_id,course_id,star_rating  FROM course_ratings;
+SELECT
+	rating_id,
+    course_id,
+    star_rating
+FROM course_ratings
+;
 
 SELECT * FROM course_ratings_normalized;
 
@@ -18,6 +34,7 @@ ALTER TABLE `onlinelearningschool`.`course_ratings_normalized`
 ADD PRIMARY KEY (`rating_id`),
 ADD INDEX `course_id_idx` (`course_id` ASC) VISIBLE;
 ;
+
 ALTER TABLE `onlinelearningschool`.`course_ratings_normalized` 
 ADD CONSTRAINT `course_id`
   FOREIGN KEY (`course_id`)
@@ -25,6 +42,8 @@ ADD CONSTRAINT `course_id`
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
   
+
+
 
 SELECT * FROM courses;
 SELECT * FROM course_ratings;
