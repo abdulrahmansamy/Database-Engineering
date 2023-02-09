@@ -37,3 +37,6 @@ WHERE order_id = NEW.order_id
 GROUP BY 1
 ORDER BY 1
 ;
+
+
+SHOW TRIGGERS;
