@@ -1,0 +1,14 @@
+sudo -u postgres psql
+
+\?
+
+\q      #quit
+\l      #show databases
+
+
+psql --help
+
+psql -h localhost -p 5432 -U username database_name
+
+
+\c database_name   # use database_name
