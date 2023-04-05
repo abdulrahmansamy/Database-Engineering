@@ -22,6 +22,7 @@ SELECT inet_server_addr(), inet_server_port();
 
 \dt[S+] [PATTERN]      list tables
 \dv[S+] [PATTERN]      list views
+\dn[S+] [PATTERN]      list schemas
 
 
 # Create user
@@ -29,6 +30,6 @@ SELECT inet_server_addr(), inet_server_port();
 postgres=# CREATE USER acwebapp WITH SUPERUSER;
 CREATE ROLE
 postgres=# \password acwebapp
-Enter new password for user "acwebapp": 
-Enter it again: 
+Enter new password for user "acwebapp": 123
+Enter it again: 123
 postgres=# 
