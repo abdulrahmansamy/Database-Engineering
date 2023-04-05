@@ -1,5 +1,10 @@
 sudo -u postgres psql
 
+or)
+
+sudo su - postgres
+psql
+
 psql --help
 
 psql -h localhost -p 5432 -U username database_name
@@ -8,3 +13,22 @@ psql -h localhost -p 5432 -U username database_name
 \q      #quit
 \l      #show databases
 \c database_name   # use database_name
+
+SELECT inet_server_addr(), inet_server_port();
+
+\h      #help
+
+\dt migration.person
+
+\dt[S+] [PATTERN]      list tables
+\dv[S+] [PATTERN]      list views
+
+
+# Create user
+
+postgres=# CREATE USER acwebapp WITH SUPERUSER;
+CREATE ROLE
+postgres=# \password acwebapp
+Enter new password for user "acwebapp": 
+Enter it again: 
+postgres=# 
