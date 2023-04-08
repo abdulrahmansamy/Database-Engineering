@@ -1,9 +1,17 @@
+## Access postgres instance
 sudo -u postgres psql
 
 or)
 
 sudo su - postgres
 psql
+
+
+## Change the Owner password
+
+\password postgres
+
+
 
 psql --help
 
