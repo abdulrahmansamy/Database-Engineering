@@ -1,0 +1,134 @@
+
+
+
+https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
+
+
+
+curl -sLO https://dev.mysql.com/get/mysql80-community-release-fc37-1.noarch.rpm
+
+sudo rpm -Uvh mysql80-community-release-fc37-1.noarch.rpm
+
+sudo yum module -y disable mysql
+
+sudo yum install -y mysql-community-server
+
+systemctl enable mysqld --now
+systemctl status mysqld
+
+
+sudo grep 'temporary password' /var/log/mysqld.log
+mysql -uroot -p
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY '1234@Pass';
+
+
+mysql -uroot -p1234@Pass
+
+
+
+mysql_secure_installation 
+
+
+cat << EOF >> /etc/my.cnf
+!includedir /etc/my.cnf.d/
+EOF
+
+mkdir -p /var/log/mysql/
+chown mysql:mysql /var/log/mysql/
+
+
+vim /etc/my.cnf.d/mysql-server.cnf
+
+
+firewall-cmd --permanent --add-service mysql
+firewall-cmd --reload 
+
+
+
+SERVER 01
+=========
+
+cat << EOF > /etc/my.cnf.d/mysql-server.cnf
+[mysqld]
+
+server_id=1
+replicate-same-server-id=0
+auto-increment-increment=2
+auto-increment-offset=1
+relay-log=/var/lib/mysql/node1-relay-bin
+relay-log-index=/var/lib/mysql/node1-relay-bin.index
+log-error=/var/log/mysql/mysql.error
+master-info-file=/var/lib/mysql/mysql-master.info
+relay-log-info-file=/var/lib/mysql/node1-relay-log.info
+log-bin=/var/lib/mysql/node1-bin
+EOF
+
+
+
+
+systemctl restart mysqld
+
+# SET GLOBAL server_id=1;
+
+show variables like 'server_id';
+
+SHOW MASTER STATUS;  ## in server 02
+
+
+STOP SLAVE;
+
+CHANGE MASTER TO MASTER_HOST='192.168.8.166', MASTER_USER='replica', MASTER_PASSWORD='123@Pass', MASTER_LOG_FILE='node2-bin.000001', MASTER_LOG_POS=490;
+
+START SLAVE;
+
+SHOW SLAVE STATUS\G;
+
+
+
+SERVER 02
+=========
+
+cat << EOF > /etc/my.cnf.d/mysql-server.cnf
+[mysqld]
+
+server-id=2
+replicate-same-server-id=0
+auto-increment-increment=2
+auto-increment-offset=2
+relay-log=/var/lib/mysql/node2-relay-bin
+relay-log-index=/var/lib/mysql/node2-relay-bin.index
+log-error=/var/log/mysql/mysql.error
+master-info-file=/var/lib/mysql/mysql-master.info
+relay-log-info-file=/var/lib/mysql/node2-relay-log.info
+log-bin=/var/lib/mysql/node2-bin
+EOF
+
+cat << EOF >> /etc/my.cnf
+
+!includedir /etc/my.cnf.d/
+EOF
+
+systemctl restart mysqld
+
+
+
+mysql -uroot -p1234@Pass
+
+
+CREATE USER 'replica'@'192.168.8.167' IDENTIFIED BY '123@Pass';
+
+
+
+
+
+SHOW MASTER STATUS;  ## in server 01
+
+STOP SLAVE;
+
+CHANGE MASTER TO MASTER_HOST='192.168.8.167', MASTER_USER='replica', MASTER_PASSWORD='123@Pass', MASTER_LOG_FILE='node1-bin.000002', MASTER_LOG_POS=157;
+
+START SLAVE;
+
+SHOW SLAVE STATUS\G;
+

@@ -13,11 +13,11 @@ CREATE TABLE order_items (
     );
     
     
-    SELECT * FROM order_items;
+SELECT * FROM order_items;
     
-    SELECT 
-		MIN(created_at),
-        MAX(created_at)
-	FROM
+SELECT 
+    MIN(created_at),
+    MAX(created_at)
+FROM
 		order_items
 	;

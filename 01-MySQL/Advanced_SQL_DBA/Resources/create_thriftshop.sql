@@ -44,7 +44,8 @@ COMMIT;
 CREATE TABLE customer_purchases (
   customer_purchase_id BIGINT UNSIGNED NOT NULL,
   customer_id BIGINT UNSIGNED NOT NULL,
-  inventory_id BIGINT UNSIGNED NOT NULL
+  inventory_id BIGINT UNSIGNED NOT NULL,
+  PRIMARY KEY (customer_purchase_id)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 INSERT INTO customer_purchases VALUES
@@ -67,7 +68,8 @@ CREATE TABLE purchase_summary (
   purchase_summary_id BIGINT UNSIGNED NOT NULL,
   customer_id BIGINT UNSIGNED NOT NULL,
   total_purchases BIGINT UNSIGNED NOT NULL,
-  purchase_excluding_last BIGINT UNSIGNED NOT NULL
+  purchases_excluding_last BIGINT UNSIGNED NOT NULL,
+  PRIMARY KEY (purchase_summary_id)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 INSERT INTO purchase_summary VALUES
