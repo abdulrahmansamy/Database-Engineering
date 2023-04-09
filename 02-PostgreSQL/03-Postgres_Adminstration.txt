@@ -58,7 +58,7 @@ postgres=# ALTER ROLE lkftest2 LOGIN;              # enable login
 
 postgres=# CREATE ROLE select_role;
 postgres=# GRANT SELECT ON ALL TABLES IN SCHEMA sales TO select_role;
-postgres=# 
+postgres=# GRANT select_role TO lkftest;
 postgres=# 
 postgres=# 
 postgres=# 
