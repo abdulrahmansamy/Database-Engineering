@@ -1,16 +1,21 @@
+## basic configuration
+
+```
 sudo vim /var/lib/pgsql/15/data/postgresql.conf
+```
 
-
+```
 listen_addresses = '*' 
 port = 5432
 max_connections = 500   
 shared_buffers = 256MB 
+```
 
-
-HBA Host Based Authentication 
-
+## HBA Host Based Authentication 
+```
 sudo vim /var/lib/pgsql/15/data/pg_hba.conf
-
+```
+```
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 local   all             all                                     peer
@@ -27,17 +32,17 @@ host    replication     all             ::1/128                 scram-sha-256
 
 # Remote host connections
 host    all             all             0.0.0.0/0               md5
+```
 
 
-
-Authentication Methods
+## Authentication Methods
 
 peer    same host users
 Ident   same host users with ssl
 password    plan password
 
 
-Authorization Methods
+## Authorization Methods
 
 Roles
 Users 
