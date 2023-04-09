@@ -1,4 +1,4 @@
-## basic configuration
+## Basic Configuration
 
 ```
 sudo vim /var/lib/pgsql/15/data/postgresql.conf
@@ -11,7 +11,7 @@ max_connections = 500
 shared_buffers = 256MB 
 ```
 
-## HBA Host Based Authentication 
+## Host Based Authentication (HBA)
 ```
 sudo vim /var/lib/pgsql/15/data/pg_hba.conf
 ```
