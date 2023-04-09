@@ -48,10 +48,15 @@ postgres=# \q
 
 [user@db01 ~]$ psql -U acwebapp -d postgres -h 172.31.30.21
 postgres=# SELECT name, setting FROM pg_settings WHERE name IN ('port','max_connections','shared_buffers')
+```
 
+```
 postgres=# SHOW timezone;
 postgres=# SET TimeZone='Europe/Rome';
+```
 
+## Users And Roles
+```
 postgres=# CREATE USER lkftest;
 postgres=# CREATE ROLE lkftest2;         # Cannot Login
 
