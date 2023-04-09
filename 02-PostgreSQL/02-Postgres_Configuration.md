@@ -44,5 +44,5 @@ password    plan password
 
 ## Authorization Methods
 
-Roles
-Users 
+- Roles
+- Users 
