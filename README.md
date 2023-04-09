@@ -16,6 +16,8 @@ https://www.udemy.com/course/advanced-mysql-database-administration-dba/
 
 
 
-## PostgreSQL Administration
+## PostgreSQL DBA
+
+### PostgreSQL Administration Deep Dive
 
 https://acloudguru.com/course/postgresql-administration-deep-dive
