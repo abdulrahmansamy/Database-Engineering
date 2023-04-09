@@ -1,18 +1,19 @@
 ## Access postgres instance
+```
 sudo -u postgres psql
-
+```
 or)
-
+```
 sudo su - postgres
 psql
-
+```
 
 ## Change the Owner password
-
+```
 \password postgres
+```
 
-
-
+```
 psql --help
 
 psql -h localhost -p 5432 -U username database_name
@@ -33,11 +34,11 @@ SELECT inet_server_addr(), inet_server_port();
 \dn[S+] [PATTERN]      list schemas
 
 \du                     list users roles 
-
+```
 
 
 # Create user
-
+```
 postgres=# CREATE USER acwebapp WITH SUPERUSER;
 CREATE ROLE
 postgres=# \password acwebapp
@@ -60,13 +61,13 @@ postgres=# CREATE ROLE select_role;
 postgres=# GRANT SELECT ON ALL TABLES IN SCHEMA sales TO select_role;
 postgres=# GRANT select_role TO lkftest;
 postgres=# 
-
+```
 
 
 # Create Database 
-
+```
 -bash-4.2$ createdb database_name
-
+```
 
 
 
