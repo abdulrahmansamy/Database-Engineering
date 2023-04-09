@@ -1,0 +1,90 @@
+Welcome back everyone.
+Before we move on from maintenance
+I wanted to talk a little bit about
+the related subject of troubleshooting.
+There are, of course, a number of things
+available to you within the operating system
+for troubleshooting things like whether a process
+is running, how much CPU is being utilized
+by different processes, as well as how much
+memory and disk utilization is occurring.
+But I wanted to take a couple of videos
+and mention some tools available
+to you for troubleshooting PostgreSQL itself.
+One of these are the system catalogs.
+As you can see from our study guide,
+I've copied the definition from
+the actual PostgreSQL documentation.
+The system catalogs are the place where
+a relational database management system
+stores schema metadata such as information
+about tables and columns
+and internal bookkeeping information.
+In other words, this is where it keeps track
+of what's going on inside PostgreSQL.
+Every RDBMS system has a method for displaying
+this type of information. In SQL server,
+it's the DMVs or dynamic management views,
+in Oracle, there are the V$ views.
+And so PostgreSQL has system catalogs for this.
+These are implemented as regular tables.
+Although I don't advise treating them like regular tables,
+avoid direct insert, updates, or deletes
+of these tables and treat them more as read only.
+These specific catalogs are found
+in the schema pg_catalog, there are both tables
+and views within here to help you
+gather this information together.
+Similar to these, there is also information
+in the INFORMATION_SCHEMA schema.
+That information is a sequel standard,
+and so a lot of it will overlap with
+what is found in the pg_catalog information.
+If you move between different database systems
+you may want to focus on the INFORMATION_SCHEMA
+views as those will be pretty consistent across the board.
+But these are just multiple avenues
+you can use to gather information about
+the system and what is going on inside of it.
+This is going to include information
+about the databases, information about the tables,
+connection information, performance information,
+and many, many other things.
+So let's slide over here to PgAdmin,
+where I have connected to our CentOS machine
+and let's test out some of these queries.
+We've already shown in the past that you can get
+information about the database and tables from
+within PSQL using commands like \d, \l, \dt.
+But what if you are in a query window
+and want information. This one, for instance
+selects the name of all the tables that are not
+in the INFORMATION_SCHEMA or pg_catalog schemas.
+So I'll hit F5 to execute that.
+And here you can see listed all
+of my tables from the HR and sales schemas.
+Because those are not included in these information ones.
+What if we wanted to get something
+like the size of the database? We can select
+that from pg_database size and hit F5.
+We could also insert a specific database name
+if we wanted to, but we are using
+the current database, which is acweb.
+We can also get the size of a particular table.
+Let's say we want the sales.payment table
+and that will return the size for us.
+We may want to list who is connected to our database.
+And so we can select that from pg_stat_activity
+like so and that displays each of the connections
+that I currently have to the database
+all connected as the Postgres user.
+And so, as you can see, there is a large amount
+of useful information that we can obtain
+from the system catalogs and INFORMATION_SCHEMA
+views about our PostgreSQL installation.
+For a full list of the system catalogs,
+be sure to visit the PostgreSQL documentation.
+I will include a link to that
+in the description for this video.
+If you have any questions, feel free to reach
+out to me and I will see you in the next video.
