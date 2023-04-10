@@ -24,7 +24,7 @@ SET lc_monetary TO "en_US.UTF8";
 ```
 
 
-#### 4. Check the Replication Identifier for the __tables__:
+#### 4. Check the Replication Identifier for the _tables_:
 
 ```
 SELECT CASE relreplident
