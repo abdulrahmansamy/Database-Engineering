@@ -1,20 +1,20 @@
 # Postgres Replication Preconfiguration
 
 ## In destination instance:
-### Check the 'wal_level' parameter:
+### Check the `wal_level` parameter:
 
 ```
 SHOW wal_level;
 SELECT name,setting FROM pg_settings WHERE name ='wal_level';
 ```
 
-### Set 'wal_level' parameter to 'logical':
+### Set `wal_level` parameter to `logical`:
 ```
 SET wal_level TO 'logical';
 ALTER SYSTEM SET wal_level = logical;
 ```
 
-
+### Unify `lc_monetary` Parametar:
 ```
 SET lc_monetary TO "en_US.UTF8";
 ```
