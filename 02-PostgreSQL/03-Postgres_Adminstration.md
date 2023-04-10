@@ -28,6 +28,9 @@ SELECT inet_server_addr(), inet_server_port();
 \h      #help
 
 \dt migration.person
+\dt migration.*;
+\dt *.*;
+
 
 \dt[S+] [PATTERN]      list tables
 \dv[S+] [PATTERN]      list views
