@@ -31,7 +31,12 @@ WHEN 'f' THEN 'full'
 WHEN 'i' THEN 'index'
 END AS replica_identity
 FROM pg_class
-WHERE oid = 'mtable'::regclass;
+WHERE oid = 'schema_name.table_name'::regclass;
+```
+
+or)
+```
+\dt+ schema_name.table_name;
 ```
 #### SET the Replication Identifier to Full
 ```
