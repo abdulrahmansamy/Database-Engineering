@@ -11,6 +11,9 @@ SELECT name,setting FROM pg_settings WHERE name ='wal_level';
 #### Set `wal_level` parameter to `logical`:
 ```
 SET wal_level TO 'logical';
+```
+or
+```
 ALTER SYSTEM SET wal_level = logical;
 ```
 
@@ -33,10 +36,9 @@ END AS replica_identity
 FROM pg_class
 WHERE oid = 'schema_name.table_name'::regclass;
 ```
-
-or)
+or
 ```
-\dt+ schema_name.table_name;
+\d+ schema_name.table_name;
 ```
 #### SET the Replication Identifier to Full
 ```
