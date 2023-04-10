@@ -1,4 +1,4 @@
-# Postgres Replication Preconfiguration
+# Postgres Replication Pre-configuration:
 
 ## In destination instance:
 #### Check the `wal_level` parameter:
