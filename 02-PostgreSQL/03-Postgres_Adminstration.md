@@ -7,7 +7,10 @@ or)
 sudo su - postgres
 psql
 ```
-
+## Check the Version
+```
+SELECT version();
+```
 ## Change the Owner password
 ```
 \password postgres
