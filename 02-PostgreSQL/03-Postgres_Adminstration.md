@@ -7,7 +7,7 @@ or)
 sudo su - postgres
 psql
 ```
-## Check the Version
+## Check Postgres Version
 ```
 SELECT version();
 ```
