@@ -1,12 +1,14 @@
 
-# MariaDB Repositories
+# MariaDB installation
+
+### MariaDB Repositories
 
 https://mariadb.org/download/?t=repo-config
 
-# Pepare MariaDB repo for Fedora
+### Pepare MariaDB repo for Fedora
 
 ```
-cat < EOF > /etc/yum.repos.d/MariaDB.repo
+cat << EOF > /etc/yum.repos.d/MariaDB.repo 
 # MariaDB 10.11 Fedora repository list - created 2023-05-02 12:07 UTC
 # https://mariadb.org/download/
 [mariadb]
@@ -19,7 +21,7 @@ gpgcheck=1
 EOF
 ```
 
-# Install MariaDB Server & Client
+### Install MariaDB Server & Client
 ```
 sudo dnf install MariaDB-server MariaDB-client
 ```
