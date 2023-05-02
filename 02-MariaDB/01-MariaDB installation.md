@@ -16,6 +16,7 @@ baseurl = https://mirror.yer.az/mariadb/yum/10.11/fedora/$releasever/$basearch
 # gpgkey= https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgkey=https://mirror.yer.az/mariadb/yum/RPM-GPG-KEY-MariaDB
 gpgcheck=1
+EOF
 ```
 
 # Install MariaDB Server & Client
