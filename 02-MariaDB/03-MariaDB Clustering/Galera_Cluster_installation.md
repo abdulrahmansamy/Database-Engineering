@@ -32,7 +32,7 @@ mkswap /swapfile
 swapon /swapfile
 ```
 
-Configure presistent swap mount
+Configure persistent swap mount
 ```
 cat << EOF >> /etc/fstab
 
