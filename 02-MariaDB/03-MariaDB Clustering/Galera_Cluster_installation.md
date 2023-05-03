@@ -43,4 +43,8 @@ Check the swap configuration
 
 ```
 swapon --summary
+
+swapon --show
+
+free -h
 ```
