@@ -16,16 +16,23 @@ or
 dd if=/dev/zero of=/swapfile bs=1M count=512
 ```
 
+Assigne the permissions for the swap file
 ```
 chmod 600 /swapfile
+```
+
+Check the swap file size and permissions
+```
 ll -h /swapfile
 ```
 
+Format the swap file and turn it on: 
 ```
 mkswap /swapfile
 swapon /swapfile
 ```
 
+Configure presistent swap mount
 ```
 cat << EOF >> /etc/fstab
 
