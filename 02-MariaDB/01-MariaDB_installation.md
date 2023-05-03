@@ -5,7 +5,7 @@
 
 https://mariadb.org/download/?t=repo-config
 
-### Pepare MariaDB repo for Fedora
+### Prepare MariaDB 10.11 repo for Fedora 37
 
 ```
 cat << "EOF" > /etc/yum.repos.d/MariaDB.repo 
