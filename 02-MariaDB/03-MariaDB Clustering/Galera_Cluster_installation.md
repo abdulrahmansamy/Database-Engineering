@@ -52,7 +52,7 @@ free -h
 
 ## 2. Configure the MariaDB for Galera Clustering
 
-edit the /etc/my.cnf.d/galera.cnf
+Edit the /etc/my.cnf.d/galera.cnf
 
 ```
 [mysqld]
