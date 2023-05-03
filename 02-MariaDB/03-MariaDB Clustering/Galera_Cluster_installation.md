@@ -29,6 +29,13 @@ semanage port -a -t mysqld_port_t -p tcp 4568
 semanage port -a -t mysqld_port_t -p tcp 4444
 semanage port -a -t mysqld_port_t -p udp 4567
 ```
+If get any error, use modify instead:
+```
+semanage port -m -t mysqld_port_t -p tcp 4567
+semanage port -m -t mysqld_port_t -p tcp 4568
+semanage port -m -t mysqld_port_t -p tcp 4444
+semanage port -m -t mysqld_port_t -p udp 4567
+```
 
 ```
 semanage permissive -a mysqld_t
