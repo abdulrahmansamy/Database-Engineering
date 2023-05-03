@@ -1,6 +1,40 @@
 # Galera Cluster Installation
 
-## 1. Enable and Configure Swap Space
+## 1. Install the Galera Packages
+
+```
+sudo yum install -y galera-4
+```
+```
+yum install MariaDB-client MariaDB-Galera-server galera
+```
+
+## 2. Configure the Firewall
+
+```
+firewall-cmd --add-port=4567/tcp --permanent
+firewall-cmd --add-port=4568/tcp --permanent
+firewall-cmd --add-port=4444/tcp --permanent
+firewall-cmd --add-port=3306/tcp --permanent
+firewall-cmd --add-port=13306/tcp --permanent
+firewall-cmd --reload
+```
+
+## 3. Configure SELinux
+
+Open the relevant ports
+```
+semanage port -a -t mysqld_port_t -p tcp 4567
+semanage port -a -t mysqld_port_t -p tcp 4568
+semanage port -a -t mysqld_port_t -p tcp 4444
+semanage port -a -t mysqld_port_t -p udp 4567
+```
+
+```
+semanage permissive -a mysqld_t
+```
+
+## 4. Enable and Configure Swap Space
 
 Check the currant swap space
 ```
@@ -50,11 +84,12 @@ free -h
 ```
 
 
-## 2. Configure the MariaDB for Galera Clustering
+## 5. Configure the MariaDB for Galera Clustering
 
 Edit the /etc/my.cnf.d/galera.cnf
 
 ```
+cat 
 [mysqld]
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
