@@ -42,6 +42,12 @@ semanage port -m -t mysqld_port_t -p tcp 4444
 semanage port -m -t mysqld_port_t -p udp 4567
 ```
 
+For validation
+```
+semanage port -l | egrep "4567|4568|4444"
+semanage port -l | grep mysqld_port_t
+```
+
 ```
 semanage permissive -a mysqld_t
 ```
