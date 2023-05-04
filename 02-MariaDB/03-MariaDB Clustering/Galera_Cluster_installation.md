@@ -3,11 +3,9 @@
 ## 1. Install the Galera Packages
 
 ```
-sudo yum install -y galera-4
+sudo yum install -y galera-4 galera
 ```
-```
-yum install MariaDB-client MariaDB-Galera-server galera
-```
+
 
 ## 2. Configure the Firewall
 
