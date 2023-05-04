@@ -1,6 +1,6 @@
 # Galera Cluster Configuration
 
-## 5. Configure the MariaDB for Galera Clustering
+<!-- ## 5. Configure the MariaDB for Galera Clustering
 
 Edit the /etc/my.cnf.d/galera.cnf
 
@@ -26,6 +26,7 @@ wsrep_sst_method=rsync
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
+-->
 
 ## Bootstrap Galera Cluster
 
