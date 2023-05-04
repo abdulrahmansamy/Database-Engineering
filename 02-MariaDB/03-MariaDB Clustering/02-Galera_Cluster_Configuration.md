@@ -27,6 +27,7 @@ log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
 
+## Bootstrap Galera Cluster
 
 ### 1. In Node one apply this configuration
 ```
@@ -79,5 +80,40 @@ wsrep_node_name='gdb02'
 wsrep_cluster_address='gcomm://172.16.14.129'
 EOF'
 ```
-Set wsrep_cluster_address to Node 1 IP
+Set `wsrep_cluster_address` to Node 1 IP
 
+```
+sudo systemctl status mariadb.service --no-pager
+sudo systemctl enable mariadb.service --now
+sudo systemctl status mariadb.service --no-pager --full
+```
+
+### 3. In Node three apply this configuration 
+
+```
+sudo bash -c 'cat << EOF > /etc/my.cnf.d/galera.cnf
+[mysqld]
+bind-address=0.0.0.0
+
+[galera]
+wsrep_on=ON
+wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so 
+binlog_format=ROW 
+wsrep_cluster_name='galera_cluster' 
+wsrep_node_name='gdb03' 
+wsrep_cluster_address='gcomm://172.16.14.129,172.16.14.130,172.16.14.131'
+EOF'
+```
+Set `wsrep_cluster_address` to Node 1,2 IPs
+
+```
+sudo systemctl status mariadb.service --no-pager
+sudo systemctl enable mariadb.service --now
+sudo systemctl status mariadb.service --no-pager --full
+```
+
+### 4. In all nodes set `wsrep_cluster_address` to all ather nods IPs
+
+```
+sudo systemctl restart mariadb
+```
