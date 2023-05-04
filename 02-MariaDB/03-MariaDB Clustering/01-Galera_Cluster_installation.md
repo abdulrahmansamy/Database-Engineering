@@ -109,7 +109,7 @@ free -h
 Edit the /etc/my.cnf.d/galera.cnf
 
 ```
-cat 
+cat << EOF >> /etc/my.cnf.d/galera.cnf
 [mysqld]
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
