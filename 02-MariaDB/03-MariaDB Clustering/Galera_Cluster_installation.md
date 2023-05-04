@@ -19,6 +19,11 @@ firewall-cmd --add-port=3306/tcp --permanent
 firewall-cmd --add-port=13306/tcp --permanent
 firewall-cmd --reload
 ```
+or
+```
+firewall-cmd --add-port={4567,4568,4444,3306,13306}/tcp --permanent
+firewall-cmd --reload
+```
 
 ## 3. Configure SELinux
 
