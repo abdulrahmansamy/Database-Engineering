@@ -92,7 +92,14 @@ git clone https://github.com/codership/glb
 cd glb/files
 sudo cp glbd.sh /etc/init.d/glb
 sudo cp glbd.cfg /etc/sysconfig/glbd
+```
 
+```
+sudo vim /etc/sysconfig/glbd
 
-
+```
+```
+LISTEN_ADDR="13306"
+CONTROL_ADDR="127.0.0.1:4444"
+DEFAULT_TARGETS="10.0.1.100:3306:1 10.0.1.110:3306:1"
 ```
