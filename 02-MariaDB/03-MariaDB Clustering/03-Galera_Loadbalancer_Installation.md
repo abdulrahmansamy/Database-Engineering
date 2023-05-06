@@ -1,7 +1,7 @@
 # Install Galera Loadbalancer
 
-### 1. Set the root Database User's Password and Create a Database User Account
-#### At Node 01
+## 1. Set the root Database User's Password and Create a Database User Account
+### At Node 01:
 Run the `mysql_secure_installation`:
 ```
 sudo mysql_secure_installation
@@ -20,7 +20,7 @@ create user remote identified by 'mypasswd';
 grant usage on *.* to 'remote'@'%' identified by 'mypasswd';
 ```
 
-### 2. Install the Prerequisite Packages 
+## 2. Install the Prerequisite Packages 
 ```
 sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
 ```
@@ -39,7 +39,7 @@ make
 sudo make install
 ```
 
-### 3. Start Galera Load Balancer
+## 3. Start Galera Load Balancer
 
 Start the GLB manually on the command line:
 ```
@@ -56,12 +56,12 @@ mysql -u remote -h 10.0.1.100 -P 13306 -p
 Return to the node0 terminal and confirm the connection was made.
 
 
-### 4. Add Nodes and Query Stats
+## 4. Add Nodes and Query Stats
 
 
 
 
-### 5. Configure and Start Galera Load Balancer as a Daemon
+## 5. Configure and Start Galera Load Balancer as a Daemon
 
 
 
