@@ -101,5 +101,23 @@ sudo vim /etc/sysconfig/glbd
 ```
 LISTEN_ADDR="13306"
 CONTROL_ADDR="127.0.0.1:4444"
-DEFAULT_TARGETS="10.0.1.100:3306:1 10.0.1.110:3306:1"
+DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
+```
+
+Start the service and check its status:
+```
+sudo service glb start
+sudo service glb status
+```
+Query for load balancer statistics:
+```
+sudo service glb getstats
+```
+Remove nodes:
+```
+sudo service glb remove 10.0.1.100:3306
+```
+Add nodes:
+```
+sudo service glb add 10.0.1.100:3306:1
 ```
