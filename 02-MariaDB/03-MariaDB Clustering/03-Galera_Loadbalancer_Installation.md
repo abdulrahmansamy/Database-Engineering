@@ -113,11 +113,12 @@ Query for load balancer statistics:
 ```
 sudo service glb getstats
 ```
-Remove nodes:
-```
-sudo service glb remove <Node01 IP>0:3306
-```
+
 Add nodes:
 ```
-sudo service glb add <Node01 IP>:3306:1
+sudo service glb add <Node IP>:3306:1
+```
+Remove nodes:
+```
+sudo service glb remove <Node IP>0:3306
 ```
