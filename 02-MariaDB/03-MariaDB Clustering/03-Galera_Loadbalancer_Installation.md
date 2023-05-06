@@ -115,9 +115,9 @@ sudo service glb getstats
 ```
 Remove nodes:
 ```
-sudo service glb remove 10.0.1.100:3306
+sudo service glb remove <Node01 IP>0:3306
 ```
 Add nodes:
 ```
-sudo service glb add 10.0.1.100:3306:1
+sudo service glb add <Node01 IP>:3306:1
 ```
