@@ -1,4 +1,8 @@
 # Install Galera Loadbalancer
+Cluster Nodes:
+- Node 01
+- Node 02
+- Node 03
 
 ## 1. Set intial Mariadb security recommendations
 
@@ -11,7 +15,7 @@ sudo mysql_secure_installation
 ```
 or 
 ```
-mariadb-secure-installation
+sudo mariadb-secure-installation
 ```
 Create a Database User Account
 ```
@@ -25,6 +29,7 @@ grant usage on *.* to 'remote'@'%' identified by 'mypasswd';
 ```
 
 ## 2. Install the Prerequisite Packages 
+### At Node 01:
 ```
 sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
 ```
