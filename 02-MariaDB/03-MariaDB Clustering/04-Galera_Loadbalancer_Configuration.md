@@ -3,6 +3,7 @@
 ## Node Management
 
 ### Add Node
+At loadbalancer node run this:
 ```
 ```
 
