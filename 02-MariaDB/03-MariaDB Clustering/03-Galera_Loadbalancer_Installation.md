@@ -47,7 +47,7 @@ make
 
 sudo make install
 
-echo 'done'
+
 ```
 
 ## 3. Start Galera Load Balancer
