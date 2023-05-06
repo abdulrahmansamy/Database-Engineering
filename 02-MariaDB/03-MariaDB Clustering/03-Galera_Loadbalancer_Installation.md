@@ -94,14 +94,14 @@ sudo cp glbd.sh /etc/init.d/glb
 sudo cp glbd.cfg /etc/sysconfig/glbd
 ```
 
+Add these lines to the configuration file
 ```
-sudo vim /etc/sysconfig/glbd
+sudo bash -c 'cat << EOF >  /etc/sysconfig/glbd
 
-```
-```
 LISTEN_ADDR="13306"
 CONTROL_ADDR="127.0.0.1:4444"
 DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
+EOF
 ```
 
 Start the service and check its status:
