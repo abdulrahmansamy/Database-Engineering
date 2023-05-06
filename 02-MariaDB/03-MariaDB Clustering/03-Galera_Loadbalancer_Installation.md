@@ -4,6 +4,7 @@
 
 ### At Node 01:
 Set the root Database User's Password:
+
 Run the `mysql_secure_installation` or `mariadb-secure-installation`:
 ```
 sudo mysql_secure_installation
