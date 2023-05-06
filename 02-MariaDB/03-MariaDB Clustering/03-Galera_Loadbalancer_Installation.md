@@ -3,10 +3,12 @@ Cluster Nodes:
 - Node 01
 - Node 02
 - Node 03
+ 
+ _Open a separate terminal for each Node in a different tab._
 
 ## 1. Set intial Mariadb security recommendations
 
-### At Node 01:
+### At Node 01 terminal:
 Set the root Database User's Password:
 
 Run the `mysql_secure_installation` or `mariadb-secure-installation`:
@@ -29,7 +31,7 @@ grant usage on *.* to 'remote'@'%' identified by 'mypasswd';
 ```
 
 ## 2. Install the Prerequisite Packages 
-### At Node 01:
+### At Node 01 terminal:
 ```
 sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
 ```
@@ -51,10 +53,11 @@ sudo make install
 ```
 
 ## 3. Start Galera Load Balancer
+### At Node 01 terminal:
 
 Start the GLB manually on the command line:
 ```
-glbd -v -c 127.0.0.1:4444 10.0.1.100:13306 10.0.1.100:3306:1
+glbd -v -c 127.0.0.1:4444 <Node01 IP>:13306 <Node01 IP>:3306:1
 ```
 Open a second terminal window and log in to node1 using the provided lab credentials:
 ```
