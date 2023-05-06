@@ -53,3 +53,11 @@ Return to the node0 terminal and confirm the connection was made.
 
 ### 4. Add Nodes and Query Stats
 
+
+
+
+### 5. Configure and Start Galera Load Balancer as a Daemon
+
+
+
+
