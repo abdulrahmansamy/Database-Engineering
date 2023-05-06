@@ -1,8 +1,10 @@
 # Install Galera Loadbalancer
 
-## 1. Set the root Database User's Password and Create a Database User Account
+## 1. Set intial Mariadb security recommendations
+
 ### At Node 01:
-Run the `mysql_secure_installation`:
+Set the root Database User's Password:
+Run the `mysql_secure_installation` or `mariadb-secure-installation`:
 ```
 sudo mysql_secure_installation
 ```
@@ -10,6 +12,7 @@ or
 ```
 mariadb-secure-installation
 ```
+Create a Database User Account
 ```
 mysql -u root -p
 ```
