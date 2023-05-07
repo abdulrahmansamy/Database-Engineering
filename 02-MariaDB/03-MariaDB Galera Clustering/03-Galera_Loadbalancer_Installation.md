@@ -101,6 +101,7 @@ sudo make install
 cd ~/glb/files
 sudo cp glbd.sh /etc/init.d/glb
 sudo cp glbd.cfg /etc/sysconfig/glbd
+sudo cp mysql.sh /usr/local/bin/mysql-check.sh
 ```
 
 Add these lines to the configuration file
