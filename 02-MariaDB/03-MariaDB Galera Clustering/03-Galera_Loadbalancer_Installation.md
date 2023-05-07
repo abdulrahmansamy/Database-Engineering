@@ -36,30 +36,25 @@ grant usage on *.* to 'remote'@'%' identified by 'mypasswd';
 sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
 ```
 
+## 3. Build the Galera Load Balancer Binaries
 ```
 git clone https://github.com/codership/glb
-
 cd glb/
-
 ./bootstrap.sh
-
 ./configure
-
 make
-
 sudo make install
 
-
 ```
-
-## 3. Start Galera Load Balancer
-### At Node 01 terminal:
+## 4. Configure and Start Galera Load Balancer
+### 1. Start Galera Load Balancer as a binary
+##### At Loadbalancer Node terminal:
 
 Start the GLB manually on the command line:
 ```
 glbd -v -c 127.0.0.1:4444 <Node01 IP>:13306 <Node01 IP>:3306:1
 ```
-### At Node 02 terminal:
+##### At Node 02 terminal:
 
 Connect to the cluster on node1 using the newly created remote user login credentials:
 ```
@@ -68,8 +63,8 @@ mysql -u remote -h <Node01 IP> -P 13306 -p'mypasswd'
 Opserve the node01 terminal and confirm the connection was made.
 
 
-## 4. Add Nodes and Query Stats
-### At Node 01 terminal:
+#### - Add Nodes and Query Stats
+##### At Loadbalancer Node terminal:
 Add a node using port 4444:
 
 > Note: This command must be run on the same node as the load balancer.
@@ -81,13 +76,22 @@ Query for statistics on the control port:
 ```
 echo "getstat"  | nc 127.0.0.1 4444
 ```
-## 5. Configure and Start Galera Load Balancer as a Daemon
-
+### 2. Configure and Start Galera Load Balancer as a Daemon
+#### Build the Galera Load Balancer Binaries
+##### At Loadbalancer Node terminal:
 Clone the GitHub repository:
 
+```
 git clone https://github.com/codership/glb
+cd glb/
+./bootstrap.sh
+./configure
+make
+sudo make install
 
+```
 
+#### Configure and Start Galera Load Balancer
 ```
 cd glb/files
 sudo cp glbd.sh /etc/init.d/glb
@@ -101,6 +105,9 @@ sudo bash -c 'cat << EOF >  /etc/sysconfig/glbd
 LISTEN_ADDR="13306"
 CONTROL_ADDR="127.0.0.1:4444"
 DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
+
+# Other glbd options if any as they would appear on the command line.
+OTHER_OPTIONS="--single --watchdog exec:'/usr/local/bin/mysql-check.sh -uremote -pmypasswd'"
 EOF
 ```
 
@@ -109,6 +116,8 @@ Start the service and check its status:
 sudo service glb start
 sudo service glb status
 ```
+
+---
 Query for load balancer statistics:
 ```
 sudo service glb getstats
