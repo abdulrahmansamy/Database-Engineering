@@ -19,7 +19,7 @@ Here I'm explaining the Database configuration for the cloud migration:
 [Advanced MySQL Database Administration](https://www.udemy.com/course/advanced-mysql-database-administration-dba)
 
 
-### 2. MariaDB 
+### 2. MariaDB Cluster Using Galera
 
 [MariaDB Cluster Administration Deep Dive](https://acloudguru.com/course/mariadb-cluster-admin-deep-dive)
 
