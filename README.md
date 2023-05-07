@@ -12,10 +12,10 @@ Here I'm explaining the Database configuration for the cloud migration:
 
 ### 1. MySQL DBA
 
-#### MySQL Database Administration I: 
+#### - MySQL Database Administration I: 
 [Beginner SQL Database Design](https://www.udemy.com/course/mysql-dba-for-beginners)
 
-#### MySQL Database Administration II:
+#### - MySQL Database Administration II:
 [Advanced MySQL Database Administration](https://www.udemy.com/course/advanced-mysql-database-administration-dba)
 
 
