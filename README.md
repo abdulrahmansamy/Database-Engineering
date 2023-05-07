@@ -21,11 +21,11 @@ Here I'm explaining the Database configuration for the cloud migration:
 
 ### 2. MariaDB Cluster Using Galera
 
-[MariaDB Cluster Administration Deep Dive](https://acloudguru.com/course/mariadb-cluster-admin-deep-dive)
+ --  [MariaDB Cluster Administration Deep Dive](https://acloudguru.com/course/mariadb-cluster-admin-deep-dive)
 
 
 ### 3. PostgreSQL DBA
 
-[PostgreSQL Administration Deep Dive](https://acloudguru.com/course/postgresql-administration-deep-dive)
+ --  [PostgreSQL Administration Deep Dive](https://acloudguru.com/course/postgresql-administration-deep-dive)
 
 
