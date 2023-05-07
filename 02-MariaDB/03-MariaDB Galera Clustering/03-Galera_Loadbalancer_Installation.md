@@ -64,7 +64,7 @@ Opserve the node01 terminal and confirm the connection was made.
 
 
 #### Add Nodes and Query Stats
-##### At Loadbalancer Node terminal:
+***At Loadbalancer Node terminal:***
 Add a node using control port 4444:
 
 > Note: This command must be run on the same node as the load balancer.
@@ -78,7 +78,7 @@ echo "getstat"  | nc 127.0.0.1 4444
 ```
 ### 2. Configure and Start Galera Load Balancer as a Daemon
 #### Build the Galera Load Balancer Binaries
-##### At Loadbalancer Node terminal:
+***At Loadbalancer Node terminal:***
 Clone the GitHub repository:
 
 ```
