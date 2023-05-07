@@ -8,7 +8,7 @@ Cluster Nodes:
 
 ## 1. Set intial Mariadb security recommendations
 
-**At Loadbalancer Node:**
+*At Loadbalancer Node:*
 
 Set the root Database User's Password:
 
