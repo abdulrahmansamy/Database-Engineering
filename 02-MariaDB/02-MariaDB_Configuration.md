@@ -1,6 +1,6 @@
 # MariaDB default Configuration
 
-Refer to official [MariaDB website](https://mariadb.com/kb/en/configuring-mariadb-with-option-files/)
+Referring to the official [MariaDB website](https://mariadb.com/kb/en/configuring-mariadb-with-option-files/)
 ```
 [client-server]
 # Uncomment these if you want to use a nonstandard connection to MariaDB
