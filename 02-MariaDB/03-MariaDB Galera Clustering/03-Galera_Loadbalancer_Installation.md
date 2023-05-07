@@ -40,6 +40,7 @@ sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
 
 ## 3. Build the Galera Load Balancer Binaries
 ```
+cd ~
 git clone https://github.com/codership/glb
 cd glb/
 ./bootstrap.sh
@@ -80,7 +81,7 @@ Query for statistics on the control port:
 echo "getstat"  | nc 127.0.0.1 4444
 ```
 ### 2. Configure and Start Galera Load Balancer as a Daemon
-#### Build the Galera Load Balancer Binaries
+<!-- #### Build the Galera Load Balancer Binaries
 **At Loadbalancer Node:**
 Clone the GitHub repository:
 
@@ -93,10 +94,11 @@ make
 sudo make install
 
 ```
+-->
 
 #### Configure and Start Galera Load Balancer
 ```
-cd glb/files
+cd ~/glb/files
 sudo cp glbd.sh /etc/init.d/glb
 sudo cp glbd.cfg /etc/sysconfig/glbd
 ```
