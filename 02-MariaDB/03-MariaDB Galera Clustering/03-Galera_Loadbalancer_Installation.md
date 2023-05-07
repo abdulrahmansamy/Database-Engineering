@@ -8,7 +8,7 @@ Cluster Nodes:
 
 ## 1. Set intial Mariadb security recommendations
 
-**At Node 01:**
+**At Loadbalancer Node:**
 
 Set the root Database User's Password:
 
@@ -32,7 +32,7 @@ grant usage on *.* to 'remote'@'%' identified by 'mypasswd';
 ```
 
 ## 2. Install the Prerequisite Packages 
-**At Node 01:**
+**At Loadbalancer Node:**
 
 ```
 sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
