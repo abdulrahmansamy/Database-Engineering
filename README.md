@@ -7,16 +7,16 @@ Here I'm explaining the Database configuration for the cloud migration:
 3. PostgreSQL
 4. MangoDB
 5. Redis
-
+---
 ## References for the Explained Databases
 
 ### 1. MySQL DBA
 
 #### - MySQL Database Administration I: 
-   [Beginner SQL Database Design](https://www.udemy.com/course/mysql-dba-for-beginners)
+ --  [Beginner SQL Database Design](https://www.udemy.com/course/mysql-dba-for-beginners)
 
 #### - MySQL Database Administration II:
-   [Advanced MySQL Database Administration](https://www.udemy.com/course/advanced-mysql-database-administration-dba)
+ --  [Advanced MySQL Database Administration](https://www.udemy.com/course/advanced-mysql-database-administration-dba)
 
 
 ### 2. MariaDB Cluster Using Galera
