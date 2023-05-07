@@ -3,8 +3,7 @@
 
 #### MariaDB Repositories
 
-Referring to the official [MariaDB Repository]
-(https://mariadb.org/download/?t=repo-config)
+Referring to the official [MariaDB Repository](https://mariadb.org/download/?t=repo-config)
 
 ### Prepare MariaDB 10.11 repo for Fedora 37
 
