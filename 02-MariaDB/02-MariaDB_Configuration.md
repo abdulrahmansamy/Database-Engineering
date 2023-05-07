@@ -30,4 +30,3 @@ log-basename=mysqld
 general-log
 log-slow-queries
 ```
-
