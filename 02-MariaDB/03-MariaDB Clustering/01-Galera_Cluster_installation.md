@@ -103,6 +103,7 @@ swapon --show
 free -h
 ```
 
+<!--
 ## 5. Configure the MariaDB for Galera Clustering
 
 Edit the /etc/my.cnf.d/galera.cnf
@@ -144,3 +145,4 @@ wsrep_cluster_address= 'gcomm://'
 EOF
 sudo cp node0.cnf /etc/my.cnf.d/
 ```
+-->
