@@ -8,7 +8,7 @@ Here I'm explaining the Database configuration for the cloud migration:
 4. MangoDB
 5. Redis
 
-## The references for the Explained Databases
+## References for the Explained Databases
 
 ### MySQL DBA
 
