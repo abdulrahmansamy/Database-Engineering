@@ -10,7 +10,7 @@ Here I'm explaining the Database configuration for the cloud migration:
 
 ## References for the Explained Databases
 
-### MySQL DBA
+### 1. MySQL DBA
 
 #### MySQL Database Administration I: 
 [Beginner SQL Database Design](https://www.udemy.com/course/mysql-dba-for-beginners)
@@ -19,12 +19,12 @@ Here I'm explaining the Database configuration for the cloud migration:
 [Advanced MySQL Database Administration](https://www.udemy.com/course/advanced-mysql-database-administration-dba)
 
 
-### MariaDB 
+### 2. MariaDB 
 
 [MariaDB Cluster Administration Deep Dive](https://acloudguru.com/course/mariadb-cluster-admin-deep-dive)
 
 
-### PostgreSQL DBA
+### 3. PostgreSQL DBA
 
 [PostgreSQL Administration Deep Dive](https://acloudguru.com/course/postgresql-administration-deep-dive)
 
