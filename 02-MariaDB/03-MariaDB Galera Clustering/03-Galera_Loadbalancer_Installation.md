@@ -9,6 +9,7 @@ Cluster Nodes:
 ## 1. Set intial Mariadb security recommendations
 
 **At Node 01:**
+
 Set the root Database User's Password:
 
 Run the `mysql_secure_installation` or `mariadb-secure-installation`:
@@ -32,6 +33,7 @@ grant usage on *.* to 'remote'@'%' identified by 'mypasswd';
 
 ## 2. Install the Prerequisite Packages 
 **At Node 01:**
+
 ```
 sudo yum -y install git autoconf automake libtool gcc-c++ nmap-ncat
 ```
