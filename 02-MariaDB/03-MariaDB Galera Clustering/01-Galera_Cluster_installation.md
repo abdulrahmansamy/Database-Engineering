@@ -1,5 +1,10 @@
 # Galera Cluster Installation
 
+Cluster Nodes:
+- Node 01 
+- Node 02
+- Node 03
+
 ## 1. Install the Galera Packages
 
 ```

@@ -1,5 +1,10 @@
 # Galera Cluster Configuration
 
+Cluster Nodes:
+- Node 01 
+- Node 02
+- Node 03
+
 <!-- ## 5. Configure the MariaDB for Galera Clustering
 
 Edit the /etc/my.cnf.d/galera.cnf
