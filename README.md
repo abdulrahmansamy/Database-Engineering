@@ -1,6 +1,12 @@
 # Database Engineering
 
-Here I'm explaining the Database configuration for the cloud migration
+Here I'm explaining the Database configuration for the cloud migration:
+
+1. MySQL
+2. MariaDB
+3. PostgreSQL
+4. MangoDB
+5. Redis
 
 ## The references for the Explained Databases
 
