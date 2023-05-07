@@ -35,8 +35,9 @@ sudo service glb status
 ```
 
 Confirm the connection is sent to the single server with the highest weight of those available, in this case node0:
+In another terminal:
 ```
-sudo service glb status
+watch service glb status
 ```
 
 ### Failover to DR Site
