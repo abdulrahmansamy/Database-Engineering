@@ -29,5 +29,6 @@ Edit the node configuration in `/etc/my.cnf.d/`. Be certain to use the private I
 wsrep_cluster_address=gcom://10.0.0.110
 ```
 Start the node:
-
+```
 sudo systemctl start mariadb.service
+```
