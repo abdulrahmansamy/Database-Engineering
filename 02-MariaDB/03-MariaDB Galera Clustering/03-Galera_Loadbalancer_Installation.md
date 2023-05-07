@@ -48,13 +48,13 @@ sudo make install
 ```
 ## 4. Configure and Start Galera Load Balancer
 ### 1. Configure and Start Galera Load Balancer as a binary
-***At Loadbalancer Node terminal:***
+**At Loadbalancer Node terminal:**
 
 Start the GLB manually on the command line:
 ```
 glbd -v -c 127.0.0.1:4444 <Node01 IP>:13306 <Node01 IP>:3306:1
 ```
-***At Node 02 terminal:***
+**At Node 02 terminal:**
 
 Connect to the cluster on node1 using the newly created remote user login credentials:
 ```
@@ -64,7 +64,7 @@ Opserve the node01 terminal and confirm the connection was made.
 
 
 #### Add Nodes and Query Stats
-***At Loadbalancer Node terminal:***
+**At Loadbalancer Node terminal:**
 Add a node using control port 4444:
 
 > Note: This command must be run on the same node as the load balancer.
@@ -78,7 +78,7 @@ echo "getstat"  | nc 127.0.0.1 4444
 ```
 ### 2. Configure and Start Galera Load Balancer as a Daemon
 #### Build the Galera Load Balancer Binaries
-***At Loadbalancer Node terminal:***
+**At Loadbalancer Node terminal:**
 Clone the GitHub repository:
 
 ```
