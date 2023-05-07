@@ -98,17 +98,16 @@ sudo make install
 
 #### Configure and Start Galera Load Balancer
 ```
-cd ~/glb/files
-sudo cp glbd.sh /etc/init.d/glb
-sudo cp glbd.cfg /etc/sysconfig/glbd
-sudo cp mysql.sh /usr/local/bin/mysql-check.sh
+sudo cp ~/glb/files/glbd.sh /etc/init.d/glb
+sudo cp ~/glb/files/glbd.cfg /etc/sysconfig/glbd
+sudo cp ~/glb/files/mysql.sh /usr/local/bin/mysql-check.sh
 ```
 
 Add these lines to the configuration file
 ```
 sudo bash -c 'cat << EOF >  /etc/sysconfig/glbd
 
-LISTEN_ADDR="13306"
+LISTEN_ADDR="<LoadBalancer Node IP>:13306"
 CONTROL_ADDR="127.0.0.1:4444"
 DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
 
