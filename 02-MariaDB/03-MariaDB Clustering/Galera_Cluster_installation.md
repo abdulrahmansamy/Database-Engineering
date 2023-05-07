@@ -117,3 +117,17 @@ wsrep_sst_method=rsync
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
+
+
+cat << EOF > node0.cnf
+[mysqld]
+bind-address=10.0.1.100
+
+[galera]
+wsrep_on=ON
+wsrep_provider=/usr/lib64/gatera-4/libgalera_smm.so
+wsrep_cluster_name= 'galera_cluster'
+wsrep_node_name= 'node0'
+wsrep_cluster_address= 'gcomm://'
+EOF
+sudo cp node0.cnf /etc/my.cnf.d/
