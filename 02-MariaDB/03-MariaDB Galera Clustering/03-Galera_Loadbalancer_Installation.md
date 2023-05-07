@@ -1,6 +1,6 @@
 # Install Galera Loadbalancer
 Cluster Nodes:
-- Node 01
+- Node 01 (Loadbalancer node as well)
 - Node 02
 - Node 03
  
@@ -47,14 +47,14 @@ sudo make install
 
 ```
 ## 4. Configure and Start Galera Load Balancer
-### 1. Start Galera Load Balancer as a binary
-##### At Loadbalancer Node terminal:
+### 1. Configure and Start Galera Load Balancer as a binary
+***At Loadbalancer Node terminal:***
 
 Start the GLB manually on the command line:
 ```
 glbd -v -c 127.0.0.1:4444 <Node01 IP>:13306 <Node01 IP>:3306:1
 ```
-##### At Node 02 terminal:
+***At Node 02 terminal:***
 
 Connect to the cluster on node1 using the newly created remote user login credentials:
 ```
@@ -63,9 +63,9 @@ mysql -u remote -h <Node01 IP> -P 13306 -p'mypasswd'
 Opserve the node01 terminal and confirm the connection was made.
 
 
-#### - Add Nodes and Query Stats
+#### Add Nodes and Query Stats
 ##### At Loadbalancer Node terminal:
-Add a node using port 4444:
+Add a node using control port 4444:
 
 > Note: This command must be run on the same node as the load balancer.
 ```
