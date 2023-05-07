@@ -1,11 +1,13 @@
 
 # MariaDB installation
 
+
+
+### Prepare MariaDB 10.11 repo for Fedora 37
+
 #### MariaDB Repositories
 
 Referring to the official [MariaDB Repository](https://mariadb.org/download/?t=repo-config)
-
-### Prepare MariaDB 10.11 repo for Fedora 37
 
 ```
 sudo bash -c 'cat << "EOF" > /etc/yum.repos.d/MariaDB.repo
