@@ -19,6 +19,7 @@ sudo service glb remove <Node IP>0:3306
 
 ### Query stats
 
+Query for load balancer statistics:
 ```
 sudo service glb getstats
 ```
