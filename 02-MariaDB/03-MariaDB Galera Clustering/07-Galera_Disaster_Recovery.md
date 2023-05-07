@@ -46,7 +46,7 @@ A manual failover can be triggered by changing the weight of the node:
 service glb add 10.0.1.100:3306:1
 service glb add 10.0.1.110:3306:10
 ```
-A failure of node1 can be simulated by stopping the mariadb service:
+A failure of `node1` can be simulated by stopping the `mariadb` service:
 ```
 sudo systemctl stop mariadb.service
 ```
