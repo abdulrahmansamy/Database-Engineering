@@ -26,7 +26,7 @@ EOF'
 Or
 
 ```
-cat << "EOF" | sudo tee -a /etc/yum.repos.d/MariaDB.repo 
+cat << "EOF" | sudo tee /etc/yum.repos.d/MariaDB.repo 
 # MariaDB 10.11 Fedora repository list - created 2023-05-03 11:40 UTC
 # https://mariadb.org/download/
 [mariadb]
