@@ -15,28 +15,33 @@ sudo yum install -y galera-4 galera
 ## 2. Configure the Firewall
 
 ```
-firewall-cmd --add-port=4567/tcp --permanent
-firewall-cmd --add-port=4568/tcp --permanent
-firewall-cmd --add-port=4444/tcp --permanent
-firewall-cmd --add-port=3306/tcp --permanent
-firewall-cmd --add-port=13306/tcp --permanent
-firewall-cmd --reload
+sudo firewall-cmd --add-port=4567/tcp --permanent
+sudo firewall-cmd --add-port=4568/tcp --permanent
+sudo firewall-cmd --add-port=4444/tcp --permanent
+sudo firewall-cmd --add-port=3306/tcp --permanent
+sudo firewall-cmd --add-port=13306/tcp --permanent
+sudo firewall-cmd --reload
 ```
 or
 ```
-firewall-cmd --add-port={4567,4568,4444,3306,13306}/tcp --permanent
-firewall-cmd --reload
+sudo firewall-cmd --add-port={4567,4568,4444,3306,13306}/tcp --permanent
+sudo firewall-cmd --reload
+```
+For Validation
+```
+sudo firewall-cmd --list-all
 ```
 
 ## 3. Configure SELinux
 
 Open the relevant ports
 ```
-semanage port -a -t mysqld_port_t -p tcp 4567
-semanage port -a -t mysqld_port_t -p tcp 4568
-semanage port -a -t mysqld_port_t -p tcp 4444
-semanage port -a -t mysqld_port_t -p udp 4567
+sudo semanage port -m -t mysqld_port_t -p tcp 4567
+sudo semanage port -a -t mysqld_port_t -p tcp 4568
+sudo semanage port -m -t mysqld_port_t -p tcp 4444
+sudo semanage port -a -t mysqld_port_t -p udp 4567
 ```
+<!--
 If get already defined error, use modify instead:
 ```
 semanage port -m -t mysqld_port_t -p tcp 4567
@@ -44,19 +49,20 @@ semanage port -m -t mysqld_port_t -p tcp 4568
 semanage port -m -t mysqld_port_t -p tcp 4444
 semanage port -m -t mysqld_port_t -p udp 4567
 ```
+-->
 
 Set permissive mode for the database service.
 ```
-semanage permissive -a mysqld_t
+sudo semanage permissive -a mysqld_t
 ```
 
 For validation
+<!-- semanage port -l | egrep "4567|4568|4444" -->
 ```
-semanage port -l | egrep "4567|4568|4444"
-semanage port -l | grep mysqld_port_t
+sudo semanage port -l | grep mysqld_port_t | egrep "mysqld_port_t|4567|4568|4444" 
 ```
 ```
-semanage permissive -l
+sudo semanage permissive -l
 ```
 
 ## 4. Enable and Configure Swap Space

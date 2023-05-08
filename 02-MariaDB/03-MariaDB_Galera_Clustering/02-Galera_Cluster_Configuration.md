@@ -83,7 +83,7 @@ wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
 binlog_format=ROW 
 wsrep_cluster_name='galera_cluster' 
 wsrep_node_name='gdb02' 
-wsrep_cluster_address='gcomm://172.16.14.129'
+wsrep_cluster_address='gcomm://<Node 1 IP>'
 EOF'
 ```
 Set `wsrep_cluster_address` to Node 1 IP
