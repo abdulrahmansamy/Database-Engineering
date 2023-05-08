@@ -103,7 +103,7 @@ sudo service glb add <Node IP>:3306:1
 ```
 Remove nodes:
 ```
-sudo service glb remove <Node IP>0:3306
+sudo service glb remove <Node IP>:3306
 ```
 
 ### 2. Configure and Start Galera Load Balancer as a binary
