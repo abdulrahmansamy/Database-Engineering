@@ -104,6 +104,7 @@ cat << EOF >> /etc/fstab
 /swapfile none swap defaults 0 0
 EOF
 ```
+
 Check the swap configuration
 
 ```
@@ -112,6 +113,11 @@ swapon --summary
 swapon --show
 
 free -h
+```
+
+Validate the swap mount in fstab file
+```
+grep swap /etc/fstab
 ```
 
 <!--
