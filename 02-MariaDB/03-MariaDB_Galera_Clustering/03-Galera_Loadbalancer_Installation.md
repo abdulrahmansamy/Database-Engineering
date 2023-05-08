@@ -79,9 +79,9 @@ Add these lines to the configuration file
 cat << "EOF" | sudo tee -a /etc/sysconfig/glbd
 LISTEN_ADDR="<LoadBalancer Node IP>:13306"
 CONTROL_ADDR="127.0.0.1:4444"
-DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
+DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1 <Node02 IP>:3306:1"
 # Other glbd options to Enable Watchdog if any as they would appear on the command line.
-OTHER_OPTIONS="--single --watchdog exec:'/usr/local/bin/mysql-check.sh -uremote -pmypasswd'" # to enable watchdog
+OTHER_OPTIONS="--single --watchdog exec:'/usr/local/bin/mysql-check.sh -uremote -pmypasswd'" 
 EOF
 ```
 
