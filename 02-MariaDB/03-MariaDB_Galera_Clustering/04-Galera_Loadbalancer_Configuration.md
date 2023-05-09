@@ -56,7 +56,7 @@ sudo service glb getstats
 Galera Load Balancer–both the system daemon and the shared library–supports five destination selection policies. When you run it from the command-line, you can define these using the command-line arguments. Otherwise, you’ll have to add the arguments to the OTHER_OPTIONS parameter in the glbd.cfg configuration file.
 
 1. Least Connected: This directs new connections to the server using the smallest number of connections possible. It will be adjusted for the server weight. This is the default policy.
-Round Robin: This sets new connections to the next destination in the circular order list. You can enable it with the `--round` option.
-2. Single: This directs all connections to the single server with the highest weight of those available. Routing continues to that server until it fails, or until a server with a higher weight becomes available. You can enable it with the `--single` option.
-3. Random: This will direct connections randomly to available servers. You can enable it using the `--random` option.
-4. Source Tracking: This will direct connections originating from the same address to the same server. You can enable it with the `--source` option.
+2. Round Robin: This sets new connections to the next destination in the circular order list. You can enable it with the `--round` option.
+3. Single: This directs all connections to the single server with the highest weight of those available. Routing continues to that server until it fails, or until a server with a higher weight becomes available. You can enable it with the `--single` option.
+4. Random: This will direct connections randomly to available servers. You can enable it using the `--random` option.
+5. Source Tracking: This will direct connections originating from the same address to the same server. You can enable it with the `--source` option.
