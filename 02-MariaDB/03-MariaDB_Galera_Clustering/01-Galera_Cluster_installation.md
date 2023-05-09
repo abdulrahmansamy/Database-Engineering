@@ -74,11 +74,11 @@ swapon --summary
 
 Create an empty file
 ```
-fallocate -l 512M /swapfile
+sudo fallocate -l 512M /swapfile
 ```
 or
 ```
-dd if=/dev/zero of=/swapfile bs=1M count=512
+sudo dd if=/dev/zero of=/swapfile bs=1M count=512
 ```
 
 Assigne the permissions for the swap file
@@ -93,16 +93,16 @@ ll -h /swapfile
 
 Format the swap file and turn it on: 
 ```
-mkswap /swapfile
-swapon /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
 ```
 
 Configure persistent swap mount
 ```
-cat << EOF >> /etc/fstab
+sudo bash -c 'cat << EOF >> /etc/fstab
 
 /swapfile none swap defaults 0 0
-EOF
+EOF'
 ```
 
 Check the swap configuration
