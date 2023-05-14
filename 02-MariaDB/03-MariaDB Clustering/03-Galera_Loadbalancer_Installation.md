@@ -101,7 +101,7 @@ sudo bash -c 'cat << EOF >  /etc/sysconfig/glbd
 LISTEN_ADDR="13306"
 CONTROL_ADDR="127.0.0.1:4444"
 DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
-EOF
+EOF'
 ```
 
 Start the service and check its status:
