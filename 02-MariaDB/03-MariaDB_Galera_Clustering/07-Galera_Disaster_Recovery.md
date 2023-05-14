@@ -1,0 +1,55 @@
+# Implement a Disaster Recovery Cluster Using MariaDB Galera Cluster and Galera Load Balancer
+
+### Configure Galera Load Balancer
+
+The primary node will have a weight of 10. Adding the DR site with a lower weight provides automatic failover should the primary node fail.
+
+Using the `--single` option causes all connections to go to a single server with the highest weight of those available:
+
+```
+sudo vim /etc/sysconfig/glbd
+```
+
+```
+# Address to listen for client connections at. Mandatory parameter.
+# To bind to all interfaces only port should be specified.
+LISTEN_ADDR="10.0.1.100:13306"
+
+# Address for controlling connection. Mandatory part is port.
+# If not specified control socket will not be opened
+CONTROL_ADDR="127.0.0.1:4444"
+
+# Target servers for client connections, space separated.
+# Target specification: IP[:PORT[:WEIGHT]] (WEIGHT and PORT optional)
+# WEIGHT defaults to 1, PORT defaults to LISTEN_ADDR port.
+DEFAULT_TARGETS="10.0.1.100:3306:10 10.0.1.110:3306:1"
+
+# Other glbd options if any as they would appear on the command line.
+OTHER_OPTIONS="--single --watchdog exec:'/usr/local/bin/mysql-check.sh -uremote -pmypasswd'"
+```
+
+Start the service:
+```
+sudo service glb start
+sudo service glb status
+```
+
+Confirm the connection is sent to the single server with the highest weight of those available, in this case node0:
+In another terminal:
+```
+watch service glb status
+```
+
+### Failover to DR Site
+
+A manual failover can be triggered by changing the weight of the node:
+```
+service glb add 10.0.1.100:3306:1
+service glb add 10.0.1.110:3306:10
+```
+A failure of `node1` can be simulated by stopping the `mariadb` service:
+```
+sudo systemctl stop mariadb.service
+```
+Connections will now be routed to the DR site automatically.
+

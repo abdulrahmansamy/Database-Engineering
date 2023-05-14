@@ -1,5 +1,10 @@
 # Galera Cluster Configuration
 
+Cluster Nodes:
+- Node 01 
+- Node 02
+- Node 03
+
 <!-- ## 5. Configure the MariaDB for Galera Clustering
 
 Edit the /etc/my.cnf.d/galera.cnf
@@ -78,7 +83,7 @@ wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
 binlog_format=ROW 
 wsrep_cluster_name='galera_cluster' 
 wsrep_node_name='gdb02' 
-wsrep_cluster_address='gcomm://172.16.14.129'
+wsrep_cluster_address='gcomm://<Node 1 IP>'
 EOF'
 ```
 Set `wsrep_cluster_address` to Node 1 IP
@@ -102,7 +107,7 @@ wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
 binlog_format=ROW 
 wsrep_cluster_name='galera_cluster' 
 wsrep_node_name='gdb03' 
-wsrep_cluster_address='gcomm://172.16.14.129,172.16.14.130,172.16.14.131'
+wsrep_cluster_address='gcomm://<Node 1 IP>,<Node 2 IP>,<Node 3 IP>'
 EOF'
 ```
 Set `wsrep_cluster_address` to Node 1,2 IPs
@@ -115,9 +120,9 @@ sudo systemctl status mariadb.service --no-pager --full
 
 ### 4. In all nodes set `wsrep_cluster_address` to all ather nods IPs
 
-`vim /etc/my.cnf.d/galera.cnf`
+`sudo vim /etc/my.cnf.d/galera.cnf`
 ```
-wsrep_cluster_address='gcomm://172.16.14.129,172.16.14.130,172.16.14.131'
+wsrep_cluster_address='gcomm://<Node 1 IP>,<Node 2 IP>,<Node 3 IP>'
 ```
 
 ```
