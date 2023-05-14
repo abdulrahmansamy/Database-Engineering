@@ -64,14 +64,22 @@ mysql -h 10.0.1.100 -P 13306 -u remote -p
 ```
 You can observe the connections now is routed to the DR site automatically.
 
-Start the `mariadb` service now as failback simulation:
+## Failback to the Main Site
+Start the `mariadb` service as failback simulation:
 ```
 sudo systemctl start mariadb.service
 ```
-Now, the `node1` rejoined the cluster, and the cluster is working normally.
 
-Roll back the nodes' weight:
+Retrieving the weight of all nodes:
 ```
 service glb add 10.0.1.100:3306:10
 service glb add 10.0.1.110:3306:1
 ```
+
+Connect to the load balancer:
+```
+mysql -h 10.0.1.100 -P 13306 -u remote -p
+```
+
+Now, the `node1` rejoined the cluster, and the cluster is working normally.
+
