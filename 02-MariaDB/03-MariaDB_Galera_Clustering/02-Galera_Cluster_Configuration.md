@@ -120,7 +120,9 @@ sudo systemctl status mariadb.service --no-pager --full
 
 ### 4. In all nodes set `wsrep_cluster_address` to all ather nods IPs
 
-`sudo vim /etc/my.cnf.d/galera.cnf`
+```
+sudo vim /etc/my.cnf.d/galera.cnf
+```
 ```
 wsrep_cluster_address='gcomm://<Node 1 IP>,<Node 2 IP>,<Node 3 IP>'
 ```
