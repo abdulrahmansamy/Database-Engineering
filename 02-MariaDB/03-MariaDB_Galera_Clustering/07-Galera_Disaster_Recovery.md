@@ -42,7 +42,7 @@ mysql -h 10.0.1.100 -P 13306 -u remote -p
 ```
 Confirm the connection is sent to the single server with the highest weight of those available, in this case node0.
 
-In another terminal, Observe the Galera Load Balancer status:
+Open another terminal for monitoring the Galera Load Balancer service, Observe its status:
 ```
 watch service glb status
 ```
@@ -68,5 +68,10 @@ Start the `mariadb` service now as failback simulation:
 ```
 sudo systemctl start mariadb.service
 ```
-Now, the `node1` rejoined the cluster, and it is working normally.
+Now, the `node1` rejoined the cluster, and the cluster is working normally.
 
+Roll back the nodes' weight:
+```
+service glb add 10.0.1.100:3306:10
+service glb add 10.0.1.110:3306:1
+```
