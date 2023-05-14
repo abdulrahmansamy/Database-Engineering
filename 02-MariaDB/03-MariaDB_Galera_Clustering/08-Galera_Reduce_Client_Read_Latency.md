@@ -52,10 +52,11 @@ We can then simulate a failure of `node0` and test the connection:
 ```
 sudo systemctl stop mariadb.service
 ```
-
+Connect to the load balancer:
 ```
 mysql -h 10.0.1.100 -P 13306 -u remote -p
 ```
+The traffic redirected to the least weight node.
 
 ### Ensuring that connections always go to the same node
 
@@ -68,7 +69,7 @@ In another terminal, monitor the Galera Load Balancer service status:
 watch service glb status
 ```
 
-In `node0`:
+In `node0`, run this command:
 ```
 mysql -h 10.0.1.100 -P 13306 -u remote -pmypasswd
 ```
