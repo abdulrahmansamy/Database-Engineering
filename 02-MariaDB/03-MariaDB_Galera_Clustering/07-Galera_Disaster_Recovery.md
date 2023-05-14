@@ -34,8 +34,15 @@ sudo service glb start
 sudo service glb status
 ```
 
-Confirm the connection is sent to the single server with the highest weight of those available, in this case node0:
-In another terminal:
+### Confirm Connections to Primary
+
+Connect to the load balancer:
+```
+mysql -h 10.0.1.100 -P 13306 -u remote -p
+```
+Confirm the connection is sent to the single server with the highest weight of those available, in this case node0.
+
+In another terminal, Observe the Galera Load Balancer status:
 ```
 watch service glb status
 ```
@@ -51,5 +58,15 @@ A failure of `node1` can be simulated by stopping the `mariadb` service:
 ```
 sudo systemctl stop mariadb.service
 ```
-Connections will now be routed to the DR site automatically.
+Connect to the load balancer:
+```
+mysql -h 10.0.1.100 -P 13306 -u remote -p
+```
+You can observe the connections now is routed to the DR site automatically.
+
+Start the `mariadb` service now as failback simulation:
+```
+sudo systemctl start mariadb.service
+```
+Now, the `node1` rejoined the cluster, and it is working normally.
 
