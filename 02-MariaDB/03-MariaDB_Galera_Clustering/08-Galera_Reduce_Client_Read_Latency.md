@@ -51,5 +51,29 @@ sudo service glb add "10.0.1.110:3306:1"
 We can then simulate a failure of `node0` and test the connection:
 ```
 sudo systemctl stop mariadb.service
+```
+
+```
 mysql -h 10.0.1.100 -P 13306 -u remote -p
 ```
+
+### Ensuring that connections always go to the same node
+
+Make sure that the all nodes have the same weight
+```
+sudo service glb add "10.0.1.110:3306:10"
+```
+In another terminal, monitor the Galera Load Balancer service status:
+```
+watch service glb status
+```
+
+In `node0`:
+```
+mysql -h 10.0.1.100 -P 13306 -u remote -pmypasswd
+```
+Repeat the last command in several terminals for `node0`, and `node1`.
+
+Observe the Load balancer status.
+
+This will direct connections originating from the same address to the same server.
