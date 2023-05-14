@@ -79,15 +79,10 @@ Add these lines to the configuration file
 cat << "EOF" | sudo tee -a /etc/sysconfig/glbd
 LISTEN_ADDR="<LoadBalancer Node IP>:13306"
 CONTROL_ADDR="127.0.0.1:4444"
-<<<<<<< HEAD:02-MariaDB/03-MariaDB Clustering/03-Galera_Loadbalancer_Installation.md
-DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1"
-EOF'
-=======
 DEFAULT_TARGETS="<Node01 IP>:3306:1 <Node02 IP>:3306:1 <Node03 IP>:3306:1"
 # Other glbd options to Enable Watchdog if any as they would appear on the command line.
 OTHER_OPTIONS="--single --watchdog exec:'/usr/local/bin/mysql-check.sh -uremote -pmypasswd'" 
 EOF
->>>>>>> 6342d2f17b02bae62e298e6fa0262356a88d7c23:02-MariaDB/03-MariaDB_Galera_Clustering/03-Galera_Loadbalancer_Installation.md
 ```
 
 Start the service and check its status:
