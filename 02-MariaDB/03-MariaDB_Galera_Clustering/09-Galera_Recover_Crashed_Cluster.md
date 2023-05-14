@@ -58,4 +58,4 @@ Re-run the status query:
 ```
 SHOW GLOBAL STATUS WHERE Variable_name IN ('wsrep_ready', 'wsrep_cluster_size', 'wsrep_cluster_status', 'wsrep_connected');
 ```
-The new node should be counted in `wsrep_cluster_size`.
+The new nodes should be counted in `wsrep_cluster_size`.
