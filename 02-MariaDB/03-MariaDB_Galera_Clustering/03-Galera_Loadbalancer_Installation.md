@@ -106,6 +106,7 @@ Remove nodes:
 sudo service glb remove <Node IP>:3306
 ```
 
+
 ### 2. Configure and Start Galera Load Balancer as a binary
 **At Loadbalancer Node:**
 
