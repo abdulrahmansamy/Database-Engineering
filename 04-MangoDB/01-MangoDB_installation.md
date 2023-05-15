@@ -27,3 +27,14 @@ To install the latest stable version of MongoDB, issue the following command:
 ```
 sudo yum install -y mongodb-mongosh
 ```
+
+## Start `mongod` service
+```
+sudo systemctl start mongod
+```
+
+## Connect to the Database
+```
+mongosh
+```
+by default this command connect to the local database on default port `27017` on localhost:
