@@ -28,6 +28,10 @@ To install the latest stable version of MongoDB, issue the following command:
 sudo yum install -y mongodb-org
 
 ```
+or
+```
+sudo yum install -y mongodb-mongosh mongodb-org
+```
 
 ## Start `mongod` service
 ```
