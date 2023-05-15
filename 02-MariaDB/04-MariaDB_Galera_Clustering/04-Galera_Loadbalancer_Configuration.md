@@ -32,6 +32,9 @@ sudo service glb status
 ### Add Node
 At loadbalancer node run this:
 ```
+sudo service glb add IP Address:port:weight
+```
+```
 sudo service glb add <Node IP>:3306:1
 ```
 After the last colon set the `node weight`
@@ -60,3 +63,6 @@ Galera Load Balancer–both the system daemon and the shared library–supports 
 3. Single: This directs all connections to the single server with the highest weight of those available. Routing continues to that server until it fails, or until a server with a higher weight becomes available. You can enable it with the `--single` option.
 4. Random: This will direct connections randomly to available servers. You can enable it using the `--random` option.
 5. Source Tracking: This will direct connections originating from the same address to the same server. You can enable it with the `--source` option.
+
+> Note: Enables balancing to top weights only, add `--top` option.
+
