@@ -65,4 +65,9 @@ Galera Load Balancer–both the system daemon and the shared library–supports 
 5. Source Tracking: This will direct connections originating from the same address to the same server. You can enable it with the `--source` option.
 
 > Note: Enables balancing to top weights only, add `--top` option.
+> So, for example to enable Round Robin policy, and rotating within the top weight nodes, the options would be like this:
+```
+OTHER_OPTIONS="--round --top"
+```
+
 
