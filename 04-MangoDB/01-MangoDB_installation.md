@@ -42,5 +42,15 @@ sudo systemctl start mongod
 ```
 mongosh
 ```
-by default this command connect to the local database on default port `27017` on localhost:
+by default this command connect to the database server running on default port `27017` on localhost:
 
+
+On start up, for the first time, by default , it reads shell configuration from this `js` file, after the JavaScript has finished processing to customize the prompt:
+```
+$HOME/.mongoshrc.js
+```
+To refer to defferent rc file:
+```
+--eval
+```
+To prevent reading the rc file, add this `--no-rc`
