@@ -53,4 +53,4 @@ To refer to defferent rc file:
 ```
 --eval
 ```
-To prevent reading the rc file, add this `--no-rc`
+To prevent reading the rc file, add this `--norc`
