@@ -15,8 +15,15 @@ gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF'
 ```
 
-## Install mongodb shell
+## Install MongoDB Shell
 
+To install the latest stable version of `mongosh`, issue the following command:
+```
+sudo yum install -y mongodb-mongosh
+```
+## Install MongoDB packages
+
+To install the latest stable version of MongoDB, issue the following command:
 ```
 sudo yum install -y mongodb-mongosh
 ```
