@@ -8,21 +8,29 @@ sudo systemctl stop mariadb.service
 ```
 ### Determine Most Advanced Node
 
-The `grastate.dat` file needs to be examined on each node, to determine which is most advanced:
+The `grastate.dat` file needs to be examined on **each node**, to determine which is most advanced:
 ```
 sudo cat /var/lib/mysql/grastate.dat
 ```
+
+We're looking here to see whether or not it's safe to bootstrap. If the `safe_to_bootstrap` line is set to 1, then it is. 
+
+Note the `sequno` as well.
 ### Bootstrap the Most Advanced Node
 
 The following commands will be run only on the most advanced, node as determined in the previous step.
 
 Edit node configuration in `/etc/my.cnf.d/`:
 ```
+sudo vim /etc/my.cnf.d/node1.cnf
+```
+Change the wsrep_cluster_address from the private one that's there now to just `gcomm://`
+```
 wsrep_cluster_address=gcomm://
 ```
 Start the node:
 ```
-sudo systemctl stop mariadb.service
+sudo systemctl start mariadb.service
 ```
 ### Check Status and Add Nodes to the Cluster
 
