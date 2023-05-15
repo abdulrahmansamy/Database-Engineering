@@ -2,7 +2,17 @@
 
 ### Stop All Nodes
 
-The MariaDB server needs to be stopped on all nodes:
+Connect to the mariaDB cluster: 
+
+```
+mysql
+```
+Check how many nodes are currently in the cluster:
+```
+SHOW GLOBAL STATUS WHERE Variable_name IN ('wsrep_ready', 'wsrep_cluster_size', 'wsrep_cluster_status', 'wsrep_connected');
+```
+
+The MariaDB server needs to be stopped on all these nodes:
 ```
 sudo systemctl stop mariadb.service
 ```
@@ -44,11 +54,20 @@ SHOW GLOBAL STATUS WHERE Variable_name IN ('wsrep_ready', 'wsrep_cluster_size', 
 ```
 A cluster size of 1 means only one node is connected.
 
-To join the other node to the cluster, we need to edit its configuration in `/etc/my.cnf.d/`. Be certain to use the private IP of the already running node for the cluster address:
+To join the other node to the cluster, we need to edit its configuration in `/etc/my.cnf.d/`. 
+```
+sudo vim /etc/my.cnf.d/node1.cnf
+```
+Be certain to use the private IP of the already running node for the cluster address:
 ```
 wsrep_cluster_address=gcom://10.0.1.110
 ```
 Start the node:
 ```
 sudo systemctl start mariadb.service
+```
+Now check again, how meny nodes are running in the cluster:
+
+```
+SHOW GLOBAL STATUS WHERE Variable_name IN ('wsrep_ready', 'wsrep_cluster_size', 'wsrep_cluster_status', 'wsrep_connected');
 ```
