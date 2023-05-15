@@ -66,8 +66,8 @@ Galera Load Balancer–both the system daemon and the shared library–supports 
 
 > Note: Enables balancing to top weights only, add `--top` option.
 > So, for example to enable Round Robin policy, and rotating within the top weight nodes, the options would be like this:
-```
+`
 OTHER_OPTIONS="--round --top"
-```
+`
 
 
