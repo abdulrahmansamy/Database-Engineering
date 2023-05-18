@@ -1,6 +1,6 @@
 # MongoDB Installation
 
-I'm explaining here the installation in redhat compatible linux, please refer to this [web site](https://www.mongodb.com/docs/mongodb-shell/install/) for the other operating systems.
+I'm explaining here the installation in the RedHat-based Linux Distributions, For the other operating systems, please refer to [MongoDB Shell Installation Docs](https://www.mongodb.com/docs/mongodb-shell/install/).
 
 ## Configure MongoDB Repository
 Run this command to 
