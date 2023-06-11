@@ -45,10 +45,11 @@ or
 ALTER TABLE mytable REPLICA IDENTITY FULL;
 ```
 
+#### 6. SET session_replication_role parameter to replica
 ```
 SELECT current_setting('session_replication_role');
 ```
-#### 6. SET session_replication_role parameter to replica
+
 ```
 SET session_replication_role = replica;
 ```
