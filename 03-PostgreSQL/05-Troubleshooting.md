@@ -34,6 +34,7 @@ SELECT migration.rtable AS Rtable, pg_total_relation_size('migration.rtable') AS
 ```
 SELECT 'migration.rtable' AS Rtable, SUM(pg_total_relation_size('migration.rtable')) AS size, COUNT(pg_total_relation_size('migration.rtable')) AS Count FROM information_schema.tables ORDER BY pg_total_relation_size('migration.rtable') DESC;
 ```
+
 ```
 SELECT 'migration.rtable' AS Rtable, pg_total_relation_size('migration.rtable') AS size FROM information_schema.tables ORDER BY pg_total_relation_size('migration.rtable') DESC;
 ```
