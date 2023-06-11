@@ -14,7 +14,12 @@ psql -h localhost -p 5432 -U username database_name
 
 ## Check Postgres Version
 ```
+psql --version
+```
+or login then:
+```
 SELECT version();
+SHOW server_version;
 ```
 ## Change the Owner password
 ```
