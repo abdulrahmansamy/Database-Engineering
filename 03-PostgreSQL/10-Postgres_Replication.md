@@ -48,7 +48,12 @@ ALTER TABLE mytable REPLICA IDENTITY FULL;
 ```
 SELECT current_setting('session_replication_role');
 ```
-
+#### 6. SET session_replication_role parameter to replica
 ```
 SET session_replication_role = replica;
+```
+
+Grant Privilege to set parameter
+```
+GRANT SET ON PARAMETER session_replication_role TO <username>;
 ```
