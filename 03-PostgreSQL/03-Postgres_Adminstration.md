@@ -42,6 +42,7 @@ SELECT inet_server_addr(), inet_server_port();
 \du                     list users roles 
 
 SET search_path TO <schema_name>    use schema or change schema to <schema_name>
+
 ```
 
 
