@@ -44,3 +44,11 @@ or
 ```
 ALTER TABLE mytable REPLICA IDENTITY FULL;
 ```
+
+```
+SELECT current_setting('session_replication_role');
+```
+
+```
+SET session_replication_role = replica;
+```
