@@ -45,7 +45,7 @@ or
 ALTER TABLE mytable REPLICA IDENTITY FULL;
 ```
 
-#### 6. SET session_replication_role parameter to replica
+#### 6. Setting session_replication_role parameter to replica
 ```
 SELECT current_setting('session_replication_role');
 ```
@@ -57,4 +57,12 @@ SET session_replication_role = replica;
 Grant Privilege to set parameter
 ```
 GRANT SET ON PARAMETER session_replication_role TO <username>;
+```
+
+#### 7. Setting search_path to Public
+
+```
+SHOW search_path;
+
+SET search_path = public;
 ```
