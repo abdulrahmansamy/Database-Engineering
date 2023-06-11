@@ -35,13 +35,17 @@ SELECT inet_server_addr(), inet_server_port();
 \dt *.*;
 
 
-\dt[S+] [PATTERN]      list tables
-\dv[S+] [PATTERN]      list views
-\dn[S+] [PATTERN]      list schemas
+\dt[S+] [PATTERN]                       list tables
+\dv[S+] [PATTERN]                       list views
+\dn[S+] [PATTERN]                       list schemas
 
-\du                     list users roles 
+\du                                     list users roles 
 
-SET search_path TO <schema_name>    use schema or change schema to <schema_name>
+SET search_path TO <schema_name>;       use schema or change schema to <schema_name>
+SET schema '<schema_name>';
+
+\d                                      shows all relations in <schema_name>
+\dt                                     shows tables in <schema_name>
 
 ```
 
