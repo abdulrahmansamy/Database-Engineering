@@ -48,6 +48,26 @@ postgres=# \q
 postgres=# SELECT name, setting FROM pg_settings WHERE name IN ('port','max_connections','shared_buffers')
 ```
 
+
+Log into PostgreSQL from the postgres user
+```
+$ sudo -u postgres psql postgres
+```
+Once in, create the user and database
+```
+CREATE ROLE myuser LOGIN PASSWORD 'mypass';
+CREATE DATABASE mydatabase WITH OWNER = myuser;
+```
+Log into PostgreSQL from the new user account
+```
+$ psql -h localhost -d mydatabase -U myuser -p <port>
+```
+
+Login without prompting for a password
+```
+PGPASSWORD=mypass psql -h localhost -p <port> -U myuser mydatabase
+```
+
 ```
 postgres=# SHOW timezone;
 postgres=# SET TimeZone='Europe/Rome';
