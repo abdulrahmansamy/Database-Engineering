@@ -2,11 +2,16 @@
 ```
 sudo -u postgres psql
 ```
-or)
+or:
 ```
 sudo su - postgres
 psql
 ```
+or:
+```
+psql -h localhost -p 5432 -U username database_name
+````
+
 ## Check Postgres Version
 ```
 SELECT version();
@@ -16,39 +21,13 @@ SELECT version();
 \password postgres
 ```
 
+## Getting help
 ```
 psql --help
-
-psql -h localhost -p 5432 -U username database_name
-\?
-
-\q      #quit
-\l      #show databases
-\c database_name   # use database_name
-
-SELECT inet_server_addr(), inet_server_port();
-
 \h      #help
-
-\dt migration.person
-\dt migration.*;
-\dt *.*;
-
-\dn[S+] [PATTERN]                       list schemas
-\dt[S+] [PATTERN]                       list tables
-\dv[S+] [PATTERN]                       list views
-\du                                     list users roles 
+\?
 ```
 
-# To select schema
-```
-SET search_path TO <schema_name>;       # use schema or change schema to <schema_name>
-#or
-SET schema '<schema_name>';
-
-\d                                      shows all relations in <schema_name>
-\dt                                     shows tables in <schema_name>
-```
 
 
 # Create user
@@ -89,5 +68,33 @@ postgres=#
 ```
 
 
+```
+\q                  #quit
+\l                  #show databases
+\c database_name   # use database_name
+
+SELECT inet_server_addr(), inet_server_port();
+
+
+
+\dt migration.person
+\dt migration.*;
+\dt *.*;
+
+\dn[S+] [PATTERN]                       list schemas
+\dt[S+] [PATTERN]                       list tables
+\dv[S+] [PATTERN]                       list views
+\du                                     list users roles 
+```
+
+# To select schema
+```
+SET search_path TO <schema_name>;       # use schema or change schema to <schema_name>
+#or
+SET schema '<schema_name>';
+
+\d                                      shows all relations in <schema_name>
+\dt                                     shows tables in <schema_name>
+```
 
 
