@@ -11,6 +11,10 @@ or:
 ```
 psql -h localhost -p 5432 -U username database_name
 ````
+Login without prompting for a password
+```
+PGPASSWORD=mypass psql -h localhost -p <port> -U myuser mydatabase
+```
 
 ## Check Postgres Version
 ```
@@ -32,8 +36,6 @@ psql --help
 \h      #help
 \?
 ```
-
-
 
 # Create user
 ```
@@ -63,10 +65,7 @@ Log into PostgreSQL from the new user account
 $ psql -h localhost -d mydatabase -U myuser -p <port>
 ```
 
-Login without prompting for a password
-```
-PGPASSWORD=mypass psql -h localhost -p <port> -U myuser mydatabase
-```
+
 
 ```
 postgres=# SHOW timezone;
