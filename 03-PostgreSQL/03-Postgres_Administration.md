@@ -9,11 +9,11 @@ psql
 ```
 or:
 ```
-psql -h localhost -p 5432 -U username database_name
+psql -h localhost -p 5432 -U <username> <database_name>
 ````
 Login without prompting for a password
 ```
-PGPASSWORD=mypass psql -h localhost -p <port> -U myuser mydatabase
+PGPASSWORD=mypass psql -h localhost -p <port> -U <username> <database_name>
 ```
 
 ## Check Postgres Version
