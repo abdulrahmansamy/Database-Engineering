@@ -16,6 +16,11 @@ Login without prompting for a password:
 PGPASSWORD=<password> psql -h localhost -p <port> -U <username> <database_name>
 ```
 
+Run a query from bash
+```
+sudo -u postgres -H -- psql -d database_name -c 'select * from table_name;'
+```
+
 ## Check Postgres Version
 Without Login to Postgres:
 ```
