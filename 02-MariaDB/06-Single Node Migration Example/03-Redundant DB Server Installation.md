@@ -30,7 +30,7 @@ sudo mariadb-secure-installation
 ```
 sudo mysqladmin -u root <password>
 ```
-## Configure the firewall
+### Allow `3306` port in the firewall
 ```
 sudo firewall-cmd --add-port=3306/tcp --permanent
 sudo firewall-cmd --reload
