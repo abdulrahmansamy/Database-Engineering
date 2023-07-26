@@ -21,6 +21,7 @@ or -->
 
 ```
 sudo sed -i s/'192.168.10.128'/'192.168.10.129'/g /etc/wordpress/wp-config.php
+sudo grep -i DB_HOST /etc/wordpress/wp-config.php
 ```
 
 ## Check the App
