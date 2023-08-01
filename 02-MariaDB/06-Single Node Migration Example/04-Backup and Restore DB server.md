@@ -25,6 +25,11 @@ scp -r db_backups/ user@dbdest:~/
 
 ## Transfer MySQL Databases and User Permissions to Target Server
 
+Check the data directory `datadir` configuration
+```
+mysql -uroot -p -e 'SHOW VARIABLES LIKE "datadir"'
+```
+Use the output path from the last command to back it up
 ```
 sudo rsync -avz /var/lib/mysql/* root@dbdest:/var/lib/mysql/ 
 ```
