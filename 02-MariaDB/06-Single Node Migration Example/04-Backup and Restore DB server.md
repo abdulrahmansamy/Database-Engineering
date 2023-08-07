@@ -9,18 +9,25 @@ systemctl stop mariadb
 mkdir ~/db_backups
 ```
 ## Dump all databases
+### Simply you can use this command:
+```
+mysqldump -u root -p --all-databases > DB_BACKUP_LOCATION/all_databases.sql
+```
+### For best practice:
+Backup command on source:
+```
+mysqldump -v -u root -p --single-transaction --skip-lock-tables --log-error=/DB_BACKUP_LOCATION/DUMP_log.err --all-databases | gzip > /DB_BACKUP_LOCATION/DUMP.sql.gz
+```
 
-```
-mysqldump -u root -p --all-databases > db_backups/all_databases.sql
-```
 <!-- or 
 ```
-mysqldump -u root -p --opt wp_db > db_backups/wp_db.sql
+mysqldump -u root -p --opt wp_db > DB_BACKUP_LOCATION/wp_db.sql
 ```
  -->
-## Transfer the Dump files to redundant db server
+## Transfer the Dump files to the target db server
+Once backup is completed, please copy DUMP.sql.gz and DUMP_log.err from above location to the target.
 ```
-scp -r db_backups/ user@dbdest:~/
+scp -r /DB_BACKUP_LOCATION/ user@dbdest:~/TARGET_LOCATION/
 ```
 
 ## Transfer MySQL Databases and User Permissions to Target Server
@@ -37,8 +44,17 @@ sudo rsync -avz /var/lib/mysql/* root@dbdest:/var/lib/mysql/
 
 ## Import MySQL Databases Dump File on the Target Server
 On the `Target Server`, run this:
+Extract the commpressed files:
 ```
-mysql -u root -p < ~/db_backups/all_databases.sql
+gunzip -kc ~/TARGET_LOCATION/DUMP.sql.gz > ~/TARGET_LOCATION/all_databases.sql
+```
+Import the `SQL` files:
+```
+mysql -u root -p < ~/TARGET_LOCATION/all_databases.sql
+```
+or without extracting the compressed file to save the disk size:
+```
+gunzip -c ~/TARGET_LOCATION/DB_BACKUP_LOCATION/DUMP.sql.gz | mysql -uroot -p
 ```
 <!-- # mysql -u root -p wp_db < ~/db_backups/wp_db.sql  -->
 
