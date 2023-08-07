@@ -27,7 +27,7 @@ mysqldump -u root -p --opt wp_db > DB_BACKUP_LOCATION/wp_db.sql
 ## Transfer the Dump files to the target db server
 Once backup is completed, please copy DUMP.sql.gz and DUMP_log.err from above location to the target.
 ```
-scp -r /DB_BACKUP_LOCATION/ user@dbdest:~/TARGET_LOCATION/
+scp -r /DB_BACKUP_LOCATION/ user@dbdest:~/
 ```
 
 ## Transfer MySQL Databases and User Permissions to Target Server
