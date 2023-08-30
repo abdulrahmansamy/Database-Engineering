@@ -52,7 +52,7 @@ Import the `SQL` files:
 ```
 mysql -u root -p < ~/TARGET_LOCATION/all_databases.sql
 ```
-or without extracting the compressed file to save the disk size:
+Alternatively, to save disk size, extract and import the compressed dump file:
 ```
 gunzip -c ~/TARGET_LOCATION/DB_BACKUP_LOCATION/DUMP.sql.gz | mysql -uroot -p
 ```
