@@ -58,6 +58,11 @@ gunzip -c ~/TARGET_LOCATION/DB_BACKUP_LOCATION/DUMP.sql.gz | mysql -uroot -p
 ```
 <!-- # mysql -u root -p wp_db < ~/db_backups/wp_db.sql  -->
 
+You can use this command to show the dump restore progress: 
+```
+pv -pert MYSQL_DUMP.sql | mysql -u root -p
+```
+
 ## Validate the Transferred Data in the Target Server
 
 ### Validate the users and permissions
