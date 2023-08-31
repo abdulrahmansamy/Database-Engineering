@@ -4,12 +4,12 @@
 
 Loading `csv` data file:
 ```sql
-LOAD DATA LOCAL INFILE 'abc.csv' INTO TABLE abc
+LOAD DATA LOCAL INFILE 'data.csv' INTO TABLE person01
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES
-(col1, col2, col3, col4, col5...);
+(username,first_name,last_name,gender,birthdate,email,ip_address,age,country,postal_code,favorite_color);
 ```
 
 
