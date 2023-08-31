@@ -6,6 +6,9 @@ You can use this command to show the dump restore progress:
 ```
 pv -pert MYSQL_DUMP.sql | mysql -u root -p
 ```
+```
+0:01:00 [2.52MiB/s] [================================================================================================================>] 100% 
+```
 
 Loop loading
 ```
