@@ -6,8 +6,7 @@ Loading `csv` data file:
 ```sql
 LOAD DATA LOCAL INFILE 'data.csv' INTO TABLE person01
 FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
+LINES TERMINATED BY '\n'
 IGNORE 1 LINES
 (username,first_name,last_name,gender,birthdate,email,ip_address,age,country,postal_code,favorite_color);
 ```
