@@ -13,7 +13,7 @@ mkdir ~/db_backups
 ```
 mysqldump -u root -p --all-databases > DB_BACKUP_LOCATION/all_databases.sql
 ```
-### common dump command
+### Common Dump command
 ```
 mysqldump --max_allowed_packet=1G --single-transaction --lock-tables=false --all-databases --create-options
 ```
