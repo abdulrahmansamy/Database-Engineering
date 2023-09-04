@@ -1,4 +1,4 @@
-# Install MariaDB
+# Target MariaDB Server Installation
 
 ## Adding MariaDB Repositories
 
