@@ -1,4 +1,4 @@
-# FailOver to the Redundant DB server
+# FailOver to the Target DB server
 
 
 
