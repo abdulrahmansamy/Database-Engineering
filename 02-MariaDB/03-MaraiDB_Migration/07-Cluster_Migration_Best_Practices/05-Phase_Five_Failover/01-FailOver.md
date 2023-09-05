@@ -1,1 +1,0 @@
-# Switch all the connections to the Destination Cluster (Failover).
